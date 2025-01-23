@@ -15,6 +15,9 @@ public class function {
         public static boolean isEmpty() {
             return head == null;
         }
+        
+
+        
 
         public static void push(int data) {
             Node Newnode = new Node(data);
@@ -40,7 +43,7 @@ public class function {
             }
             return head.data;
         }
-    }
+    }  
 
     public static void main(String[] args) {
         stack s = new stack();
@@ -54,5 +57,13 @@ public class function {
            
             
         }
+        System.out.println("");
+        s.pop();
+        while (!s.isEmpty()) {
+            System.out.println(s.pop());
+           
+            
+        }
+
     }
 }
