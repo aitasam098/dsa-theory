@@ -36,21 +36,34 @@ public class arrlist {
         AddAtBottom(data,s);
         s.push(top);
     }
+    public static void ReverseAStack(Stack<Integer> s){
+        if (s.empty()) {
+            return;
+        }
+        int top = s.pop();
+        ReverseAStack(s);
+        AddAtBottom(top,s);
+    }
+
     public static void main(String[] args) {
         Stack<Integer> s = new Stack();
         s.push(1);
         s.push(2);
         s.push(3);
         s.push(4);
+        s.push(45);
 
 
         AddAtBottom(45,s);
+        ReverseAStack(s);
 
         while (!s.isEmpty()) {
-            System.out.println(s.pop());
+            System.out.println(s.peek());
+            s.pop();
            
             
         }
+            
     }
     
 }
