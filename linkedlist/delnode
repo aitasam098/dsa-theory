@@ -1,0 +1,51 @@
+//************************************************del node single******************************** */
+public void delnode(int data) {
+    if (head == null) {
+        System.out.println("list is empty");
+        return;
+    }
+    if (head.data==data) {
+        head=head.next;
+        
+    }
+    
+    Node current1 = head;
+     Node current2=head;
+    while (current1 != null) {
+        
+        while (current2!=null) {
+            if (current1.data==current2.data) {
+                current2.next=current2.next;
+            }
+            current2=current2.next;
+        }
+        current1=current1.next;
+    }
+    System.out.println("not found");
+}
+
+/*************************************double node del************************************/
+
+public void delnode(int data) {
+
+    if (head == null) {
+        System.out.println("list is empty");
+        return;
+    }
+
+    if (head==data){
+        head=head.next;
+        head.prev=null;
+        return ;
+    }
+     Node current=head;
+     while(current.next!=null){
+        if(current.next==data){
+            current.next=current.next.next.prev;
+            current.next.next.prev=current.next;
+        }
+        current=current.next;
+    
+     }
+     System.out.println("not found");
+    }
